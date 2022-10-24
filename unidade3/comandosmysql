@@ -1,0 +1,45 @@
+-xampp > mysql > shell
+-mysql-u root
+-show databases;
+-criar base de dados: create database aula1tarde;
+-como usar/conectar: use aula1tarde;
+-apagar base de dados: drop database aula1tarde;
+-criar tabela: create table aluno(
+nome varchar(50),
+idade int,
+endereço varchar(50),
+estado varchar(2),
+sexo enum("f","m"));
+- cadastrar um aluno na tabela de aluno:
+insert into aluno values("ethan",6,"rua a","rj","m");
+-visualizar os alunos cadastrados(*todos) : select * from aluno;
+-visualizar informação especifica  cadastrados(*todos) : select nome from aluno;
+
+exercicio: Crie um banco de dados com o nome GASTRONOMIA, dentro deste banco crie a seguinte tabela:
+Receita : nome, autor, ingrediente e tipo enum("doce","salgado"). Cadastre 5 tipos de receitas nesta tabela.
+
+
+
+
+create database gastronomia;
+
+use gastronomia;
+
+
+create table Receitas(
+Nome varchar(50),
+Autor varchar(50),
+Ingrediente text,
+Tipo enum("Doce","Salgado"));
+
+
+insert into Receitas values("Mousse de maracujá","Mycaelle","Leite condensado","Doce");
+insert into Receitas values("Bolo de cenoura","Joseph","Farinha de trigo","Doce");
+insert into Receitas values("Rabanada recheada com nutella","Ethan","Pão","Doce");
+insert into Receitas values("Pudim","Nilda","Ovos","Doce");
+insert into Receitas values("Salgadinhos","Maria","Frango desfiado","Salgado");
+
+
+
+
+select * from Receitas;
