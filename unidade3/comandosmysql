@@ -48,7 +48,6 @@ select * from Receitas;
 AULA 2
 
 
-
 Iniciar: mysql -u root  
 
 Ver pastas:  show databases;
@@ -58,3 +57,165 @@ Criar pasta:  create database aula2tarde;
 Usar: use aula2tarde;
 
 Apagar pasta: drop database aula2tarde;
+
+
+__________________________________
+
+/*Fases da modelagem
+
+
+
+Fase 1 conceitual
+
+
+
+Apenas um rascuho do que iremos fazer no banco
+
+de dados. A fase conceitual pode ser feita em qualquer 
+
+editor de texto..
+
+
+
+FASE 1
+
+
+
+Aluno - TABELA
+
+NOME  CARACTER (50)
+
+SEXO  CARACTER 1
+
+IDADE NUMERICO 2  
+
+ENDERECO  NUMERICO (100)
+
+TELEFONE CARACTER (20)
+
+E-MAIL - CARACTER(30)
+
+
+
+FASE 2 - LOGICA
+
+TRAZER O QUE FEZMOS NA FASE 1 ATÉ ALGUM PROGRAMA DE MODELAGEM
+
+E REALIZAR O DIAGRAMA DE ENTIDADE E RELACIONAMENTO.  (DER)
+
+
+FASE 3 - Fisica
+script do banco
+__________________________________
+
+Fases de modelagem
+Fase1 (conceitual)/ Criar tabela:
+
+create table Alunos(
+Nome varchar(50),
+Sexo char(1),
+Idade int,
+Endereco varchar(100),
+Telefone varchar(20),
+Email varchar(30));
+
+Visualizar tabela: show tables;
+
+Descrever conteudo da tabela: desc Alunos;
+
+insert into Alunos values("Mycaelle","F",26,"Rua A", "(21)96512-0857","mycaelle@gmail.com");
+insert into Alunos values("Joseph","M",28,"Rua B", "(21)55555-0857","joseph@senac.com");
+insert into Alunos values("Ethan","M",6,"Rua C", "(22)96512-0000","ethan@gmail.com");
+insert into Alunos values("Samara","F",24,"Rua A", "(22)44444-0857","samara@globo.com");
+insert into Alunos values("Maria","F",42,"Rua B", "(21)96512-3333","maria@gmail.com");
+insert into Alunos values("Mikael","M",23,"Rua C", "(22)55555-3333","mikael@gmail.com");
+insert into Alunos values("Nilda","F",51,"Rua A", "(21)96512-1111","nilda@globo.com");
+insert into Alunos values("Abel","M",50,"Rua B", "(22)22222-3333","abel@senac.com");
+
+Visualizar: select * from Alunos;
+
+
+Visualizar especifico: select Nome, Email from Alunos;
+
+
+select 10 + 10 as "soma";
+
+
+Visualizar com informação especifica :  
+
+select Nome, Email from Alunos where Sexo = "f";
+
+select Nome, Email from Alunos where Sexo = "m";
+
+select Nome, Endereco from Alunos where Endereco = "Rua A";
+
+
+
+Modificou todas as informações da tabela:  update alunos set sexo = "F";
+
+Modifica a informação especifica:  update Alunos set Sexo ="M" where Nome= "Joseph" or Nome="Ethan" or Nome= "Abel";
+
+
+Visualizar com informação especifica :  
+
+select * from Alunos where Endereco ="Rua A";
+
+select * from Alunos where Endereco ="Rua B" and Sexo= "M";
+
+
+
+
+Exercício:
+
+Crie um banco de dados com o nome exercicio2
+
+Crie a seguinte tabela: Convidado com os seguintes campos:
+
+Nome caracter 20
+Bairro caracter 20
+Cidade caracter 20
+Estado caracter 2
+Parentesco caracter 15
+Presente caracter 20
+Valor decimal
+
+Cadastrar 5 registros na tabela de convidado
+Listar o nome e o parentesco dos convidados
+Listar todos os convidados que darão presente com valor maior que 500
+
+
+
+
+
+create database exercicio2;
+
+use exercicio2;
+
+create table convidado(
+Nome varchar(20),
+Bairro varchar(20),
+Estado varchar(2),
+Parentesco varchar(15),
+Presente varchar(20),
+Valor decimal);
+
+show tables;
+
+insert into convidado values("Mycaelle","Inhauma","RJ","Mae", "Cartas","100");
+insert into convidado values("Joseph","Benfica","SP","Pai", "Carro","800");
+insert into convidado values("Maria","Inhauma","RJ","Avo", "Roupa","300");
+insert into convidado values("Nilda","Benfica","SP","Tia Avo", "PS5","5000");
+insert into convidado values("Abel","Inhauma","RJ","Avo", "Sapato","200");
+insert into convidado values("Samara","Benfica","SP","Tia", "Boneco","550");
+insert into convidado values("Mikael","Inhauma","RJ","Tio", "Pix","50");
+insert into convidado values("Luciana","Benfica","SP","Avo", "Celular","1100");
+
+select * from convidado;
+
+select Nome, Parentesco from convidado;
+
+select * from convidado Nome where Valor >="500";
+
+select * from convidado Nome where Valor <="500";
+
+
