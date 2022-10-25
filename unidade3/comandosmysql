@@ -1,5 +1,5 @@
 -xampp > mysql > shell
--mysql-u root
+-mysql -u root
 -show databases;
 -criar base de dados: create database aula1tarde;
 -como usar/conectar: use aula1tarde;
@@ -43,3 +43,18 @@ insert into Receitas values("Salgadinhos","Maria","Frango desfiado","Salgado");
 
 
 select * from Receitas;
+
+
+AULA 2
+
+
+
+Iniciar: mysql -u root  
+
+Ver pastas:  show databases;
+
+Criar pasta:  create database aula2tarde;
+
+Usar: use aula2tarde;
+
+Apagar pasta: drop database aula2tarde;
