@@ -44,7 +44,7 @@ insert into Receitas values("Salgadinhos","Maria","Frango desfiado","Salgado");
 
 select * from Receitas;
 
-
+__________________________________________________________________________________________________________
 AULA 2
 
 
@@ -218,4 +218,113 @@ select * from convidado Nome where Valor >="500";
 
 select * from convidado Nome where Valor <="500";
 
+__________________________________________________________________________________________________________
+AULA 3
 
+(?pk - fk?)
+
+Iniciar: mysql -u root  
+
+Criar pasta:  create database aula3tarde;
+
+Ver pastas:  show databases;
+
+Usar: use aula3tarde;
+
+Criar tabela: create table aluno(
+idaluno int primary key auto_increment,
+nome varchar (30) not null,
+idade int not null,
+sexo enum("M","F") not null,
+email varchar(30));
+
+Visualizar: desc aluno;
+
+Inserir dados na tabela:
+
+insert into aluno values ("null","Joao",43,"M","joao@gmail.com");
+insert into aluno values ("null","Celia",34,"F","celia@gmail.com");
+insert into aluno values ("null","Carlos",35,"M","carlos@bol.com");
+insert into aluno values ("null","Vitor",17,"M","vitor@globo.com");
+insert into aluno values ("null","Laura",18,"F","laura@globo.com");
+insert into aluno values ("null","Vitoria",17,"F","vitoria@gmail.com");
+
+
+select * from aluno;
+
+select nome, email from aluno;
+
+select * from aluno where idade >=30;
+
+select * from aluno where idade <=30;
+
+select * from aluno where email like "%globo%";
+
+select * from aluno where email like "%gmail%";
+
+
+select * from aluno where email like "%globo%" and sexo ="M";
+
+Trazer quantidade: select count(*) as "quantidade", sexo from aluno group by sexo;
+
+
+
+CREATE TABLE TELEFONE(
+
+    IDTELEFONE INT PRIMARY KEY AUTO_INCREMENT,
+
+    TIPO ENUM('RES','COM','CEL') NOT NULL,
+
+    NUMERO VARCHAR(10) NOT NULL,
+
+    ID_ALUNO INT,
+
+    FOREIGN KEY(ID_ALUNO) REFERENCES ALUNO(IDALUNO)
+
+);
+
+
+****DEU ERRO A MINHA****
+create table telefone(
+idtelefone int primary key auto_increment,
+tipo enum("res","com","cel") not null,
+numero varchar(10) not null,
+id_aluno int,
+foreing key(id_aluno) references aluno(idaluno));
+
+
+
+insert into telefone values (null,'cel','1111-2222',1);
+
+insert into telefone values (null,'res','1111-3333',1);
+
+insert into telefone values (null,'com','1111-4444',1);
+
+insert into telefone values (null,'cel','2222-2222',2);
+
+insert into telefone values (null,'res','2222-3333',2);
+
+insert into telefone values (null,'cel','1111-4444',3);
+
+insert into telefone values (null,'cel','1111-5555',4);
+
+insert into telefone values (null,'cel','1111-6666',5);
+
+insert into telefone values (null,'res','9999-4444',6);
+
+
+select * from aluno;
+
+select * from telefone;
+
+
+Como ver duas tabelas: select nome, email, numero from aluno inner join telefone on idaluno = id_aluno;
+
+select * from aluno inner join telefone on idaluno = id_aluno;
+
+
+select * from aluno inner join telefone on idaluno = id_aluno where sexo ="F";
+select * from aluno inner join telefone on idaluno = id_aluno where sexo ="M";
+
+
+select * from aluno inner join telefone on idaluno = id_aluno where sexo ="F" and tipo="cel";
