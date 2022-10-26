@@ -331,3 +331,50 @@ select * from aluno inner join telefone on idaluno = id_aluno where sexo ="F" an
 select * from aluno inner join telefone on idaluno = id_aluno where sexo ="M" and tipo="cel" and email like "%gmail%";
 
 
+Excercicio:
+
+Crie um banco de dados com o nome exercício3
+
+Dentro dele as seguintes tabelas
+
+Produto
+
+                                             Idproduto
+
+                                             Nome
+
+                                             Descrição
+
+                                             Valor
+
+Cliente
+
+                                             Idcliente
+
+                                             Nome
+
+                                             Telefone
+
+ 
+
+ 
+
+Ao criar a tabela de venda , inclua o relacionamento entre as tabelas de produto e cliente.         
+
+Venda
+
+                                             Idvenda
+
+                                             Datavenda
+
+                                             Quantidade
+
+                                             Idproduto
+
+                                             Idcliente
+
+ 
+
+Cadastre 5 produtos na tabela de produto
+
+Cadastre 5 clientes na tabela de cliente
