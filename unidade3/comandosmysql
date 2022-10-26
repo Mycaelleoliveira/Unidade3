@@ -378,3 +378,31 @@ Venda
 Cadastre 5 produtos na tabela de produto
 
 Cadastre 5 clientes na tabela de cliente
+
+
+++++++++++++++++++++++++++++++
+????????????????????????????
+create database exercicio3;
+
+use exercicio3;
+
+create table produto(
+idproduto int primary key auto_increment,
+nome varchar (30) not null,
+descricao varchar (30) not null,
+valor decimal);
+
+
+create table cliente(
+idcliente int primary key auto_increment,
+nome varchar (30) not null,
+telefone varchar(10) not null);
+
+
+create table venda(
+idvenda int primary key auto_increment,
+data venda STR_TO_DATE( "01/05/2014", "%m/%d/%Y" ),
+quantidade varchar (20) not null,
+id_produto int,
+id_venda int,
+foreign key(id_idcliente) references cliente(idcliente));
