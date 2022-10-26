@@ -328,3 +328,6 @@ select * from aluno inner join telefone on idaluno = id_aluno where sexo ="M";
 
 
 select * from aluno inner join telefone on idaluno = id_aluno where sexo ="F" and tipo="cel";
+select * from aluno inner join telefone on idaluno = id_aluno where sexo ="M" and tipo="cel" and email like "%gmail%";
+
+
