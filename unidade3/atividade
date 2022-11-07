@@ -1,0 +1,33 @@
+Crie um Sistema para os Produtos de uma empresa,
+
+a tela de cadastro contendo os seguintes dados.
+
+    Nome do Produto
+
+    Descrição do produto
+
+    quantidade do produto
+
+    valor unitário
+
+    fornecedor
+
+
+
+    Cadastro no mínimo 5 produtos
+
+    Crie uma tela de consulta onde mostre os seguintes campos
+
+    Código do produto
+
+    nome
+
+    descrição
+
+    Quantidade em estoque
+
+    Valor total em estoque
+
+
+
+    Crie o botão para excluir e a lógica de excluir produto
